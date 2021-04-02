@@ -11,19 +11,19 @@ class StrengthState extends State<Strength> {
         initialValue: globals.temp2.str.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 25, height: 0),
+        style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
           LengthLimitingTextInputFormatter(2),
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
         onChanged: (String str) {
-            var bonus = modifier(globals.temp2.str);
-            bonus = bonus.toString();
-            globals.temp2.str = int.parse(str);
-            updateStr(globals.temp2, globals.temp2.str);
-            return globals.stats['Strength'] = bonus;
+          var bonus = modifier(globals.temp2.str);
+          bonus = bonus.toString();
+          globals.temp2.str = int.parse(str);
+          updateStr(globals.temp2, globals.temp2.str);
+          return globals.stats['Strength'] = bonus;
         });
   }
 }
@@ -36,9 +36,9 @@ class DexterityState extends State<Dexterity> {
         initialValue: globals.temp2.dex.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 25, height: 0),
+        style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
           LengthLimitingTextInputFormatter(2),
         ],
         decoration: const InputDecoration.collapsed(
@@ -61,9 +61,9 @@ class ConstitutionState extends State<Constitution> {
         initialValue: globals.temp2.con.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 25, height: 0),
+        style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
           LengthLimitingTextInputFormatter(2),
         ],
         decoration: const InputDecoration.collapsed(
@@ -86,9 +86,9 @@ class IntelligenceState extends State<Intelligence> {
         initialValue: globals.temp2.intelligence.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 25, height: 0),
+        style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
           LengthLimitingTextInputFormatter(2),
         ],
         decoration: const InputDecoration.collapsed(
@@ -111,9 +111,9 @@ class WisdomState extends State<Wisdom> {
         initialValue: globals.temp2.wis.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 25, height: 0),
+        style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
           LengthLimitingTextInputFormatter(2),
         ],
         decoration: const InputDecoration.collapsed(
@@ -136,9 +136,9 @@ class CharismaState extends State<Charisma> {
         initialValue: globals.temp2.cha.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 25, height: 0),
+        style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
           LengthLimitingTextInputFormatter(2),
         ],
         decoration: const InputDecoration.collapsed(

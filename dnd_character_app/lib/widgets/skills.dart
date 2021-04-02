@@ -312,7 +312,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -351,7 +351,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(3),
                 ],
@@ -379,7 +379,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Saving Throw",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -388,7 +388,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -427,7 +427,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -456,7 +456,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Athletics",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -489,7 +489,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -527,7 +527,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -556,7 +556,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Saving Throw",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -565,7 +565,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -603,7 +603,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -632,7 +632,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Acrobatics",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -641,7 +641,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -679,7 +679,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -708,7 +708,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Stealth",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -717,7 +717,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -755,7 +755,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(3),
                 ],
@@ -783,7 +783,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Sleight of Hand",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -817,7 +817,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -855,7 +855,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -884,7 +884,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Saving Throw",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -917,7 +917,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -955,7 +955,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -984,7 +984,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Saving Throw",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -993,7 +993,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1031,7 +1031,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1060,7 +1060,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Arcana",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1069,7 +1069,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1107,7 +1107,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1136,7 +1136,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "History",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1145,7 +1145,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1183,7 +1183,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1212,7 +1212,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Investigation",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1221,7 +1221,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1259,7 +1259,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1288,7 +1288,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Nature",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1297,7 +1297,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1335,7 +1335,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1364,7 +1364,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Religion",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1397,7 +1397,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1435,7 +1435,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1464,7 +1464,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Saving Throw",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1473,7 +1473,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1511,7 +1511,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1540,7 +1540,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Animal Handling",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1549,7 +1549,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1587,7 +1587,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1616,7 +1616,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Insight",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1625,7 +1625,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1663,7 +1663,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1692,7 +1692,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Medicine",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1701,7 +1701,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1739,7 +1739,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1768,7 +1768,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Perception",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1777,7 +1777,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1815,7 +1815,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1844,7 +1844,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Survival",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1877,7 +1877,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1915,7 +1915,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -1944,7 +1944,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Saving Throw",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -1953,7 +1953,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -1991,7 +1991,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -2020,7 +2020,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Deception",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -2029,7 +2029,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -2067,7 +2067,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -2096,7 +2096,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Intimidation",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -2105,7 +2105,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -2143,7 +2143,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   
                   LengthLimitingTextInputFormatter(3),
@@ -2172,7 +2172,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Performance",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],
@@ -2181,7 +2181,7 @@ class SkillsState extends State<Skills> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 20, top: 15),
+              margin: EdgeInsets.only(left: 20, top: 1),
               width: 25,
               height: 25,
               child: Material(
@@ -2219,7 +2219,7 @@ class SkillsState extends State<Skills> {
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 0.2),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(3),
                 ],
@@ -2247,7 +2247,7 @@ class SkillsState extends State<Skills> {
               child: Text(
                 "Persuasion",
                 style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1.1),
+                    TextStyle(color: Colors.white, fontSize: 25, height: 0.8),
               ),
             ),
           ],

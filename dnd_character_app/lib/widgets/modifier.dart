@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'globals.dart' as globals;
 
-
+double padright = 0;
 class StrengthBonusState extends State<StrengthBonus> {
   @override
   Widget build(BuildContext context) {
     String positive = "";
     if (int.parse(globals.stats['Strength']) >= 0) {
       positive = "+";
+      padright = 20;
+    }
+    else{
+      padright = 10;
     }
     return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: padright),
         child: Text(
           positive + globals.stats['Strength'],
           textAlign: TextAlign.center,
@@ -24,9 +28,13 @@ class DexterityBonusState extends State<DexterityBonus> {
     String positive = "";
     if (int.parse(globals.stats['Dexterity']) >= 0) {
       positive = "+";
+      padright = 20;
+    }
+    else{
+      padright = 10;
     }
     return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: padright),
         child: Text(
           positive + globals.stats['Dexterity'],
           textAlign: TextAlign.center,
@@ -40,9 +48,13 @@ class ConstitutionBonusState extends State<ConstitutionBonus> {
     String positive = "";
     if (int.parse(globals.stats['Constitution']) >= 0) {
       positive = "+";
+      padright = 20;
+    }
+    else{
+      padright = 10;
     }
     return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: padright),
         child: Text(
           positive + globals.stats['Constitution'],
           textAlign: TextAlign.center,
@@ -56,9 +68,13 @@ class IntelligenceBonusState extends State<IntelligenceBonus> {
     String positive = "";
     if (int.parse(globals.stats['Intelligence']) >= 0) {
       positive = "+";
+      padright = 20;
+    }
+    else{
+      padright = 10;
     }
     return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: padright),
         child: Text(
           positive + globals.stats['Intelligence'],
           textAlign: TextAlign.center,
@@ -72,9 +88,13 @@ class WisdomBonusState extends State<WisdomBonus> {
     String positive = "";
     if (int.parse(globals.stats['Wisdom'])>= 0) {
       positive = "+";
+      padright = 20;
+    }
+    else{
+      padright = 10;
     }
     return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: padright),
         child: Text(
           positive + globals.stats['Wisdom'],
           textAlign: TextAlign.center,
@@ -88,9 +108,13 @@ class CharismaBonusState extends State<CharismaBonus> {
     String positive = "";
     if (int.parse(globals.stats['Charisma']) >= 0) {
       positive = "+";
+      padright = 20;
+    }
+    else{
+      padright = 10;
     }
     return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: padright),
         child: Text(
           positive + globals.stats['Charisma'],
           textAlign: TextAlign.center,

@@ -28,14 +28,14 @@ class HomeState extends StatefulWidget {
 }
 
 class Home extends State<HomeState> {
-  hideClass(Pharacter temp){
-    if(temp.name.length >= 10 || temp.pClass.length >= 10){
+  hideClass(Pharacter temp) {
+    if (temp.name.length >= 10 || temp.pClass.length >= 10) {
       return "";
-    }
-    else{
+    } else {
       return temp.pClass;
     }
   }
+
   @override
   Widget build(BuildContext context) {
     Pharacter temp = ModalRoute.of(context).settings.arguments;
@@ -53,34 +53,31 @@ class Home extends State<HomeState> {
           child: Row(
             children: <Widget>[
               Text(temp.name),
-              Text(" "),
+              SizedBox(width: 10),
               Text(hideClass(temp)),
-              Text(" "),
+              SizedBox(width: 10),
               Text("Level"),
-              Text(" "),
+              SizedBox(width: 10),
               Container(
-                  width: 40,
-                  height: 30,
-                  child: TextFormField(
-                    initialValue: temp.level.toString(),
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.center,
-                    style:
-                        TextStyle(color: Colors.white, fontSize: 23, height: 0),
-                    inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(3),
-                    ],
-                    decoration: InputDecoration.collapsed(
-                        hintText: "0",
-                        hintStyle: TextStyle(color: Colors.white)),
-                    onChanged: (newlevel) => {
-                          temp.level = int.parse(newlevel),
-                          updateLevel(temp, temp.level),
-                        },    
-                  ),
-                  
-                  ),
+                width: 50,
+                height: 18,
+                child: TextFormField(
+                  initialValue: temp.level.toString(),
+                  keyboardType: TextInputType.number,
+                  style:
+                      TextStyle(color: Colors.white, fontSize: 22, height: 1),
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                    LengthLimitingTextInputFormatter(3),
+                  ],
+                  decoration: InputDecoration.collapsed(
+                      hintText: "0", hintStyle: TextStyle(color: Colors.white)),
+                  onChanged: (newLevel) => {
+                    temp.level = int.parse(newLevel),
+                    updateLevel(temp, temp.level),
+                  },
+                ),
+              ),
             ],
           ),
         ),
@@ -109,6 +106,7 @@ class Home extends State<HomeState> {
                         textScaleFactor: 1.5,
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
+                      SizedBox(height: 10),
                       TextFormField(
                         initialValue: temp.ac.toString(),
                         keyboardType: TextInputType.number,
@@ -116,7 +114,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(
                             color: Colors.white, fontSize: 25, height: 1),
                         inputFormatters: <TextInputFormatter>[
-                          WhitelistingTextInputFormatter.digitsOnly,
+                          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                           LengthLimitingTextInputFormatter(3),
                         ],
                         decoration: InputDecoration.collapsed(
@@ -147,6 +145,7 @@ class Home extends State<HomeState> {
                         textScaleFactor: 1.5,
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
+                      SizedBox(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -158,24 +157,29 @@ class Home extends State<HomeState> {
                               keyboardType: TextInputType.number,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 25, height: 1),
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  height: 1.2),
                               inputFormatters: <TextInputFormatter>[
-                                WhitelistingTextInputFormatter.digitsOnly,
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9]')),
                                 LengthLimitingTextInputFormatter(3),
                               ],
                               decoration: const InputDecoration.collapsed(
                                   hintText: "0",
-                                  hintStyle: TextStyle(color: Colors.white)),
+                                  hintStyle: TextStyle(
+                                      color: Colors.white, height: 1.2)),
                               onChanged: (newNumber) => {
                                 temp.hit = int.parse(newNumber),
                                 updateHit(temp, temp.hit),
                               },
                             ),
                           ),
+                          SizedBox(height: 10),
                           Text(
                             "/",
                             textScaleFactor: 2,
-                            style: TextStyle(color: Colors.white, height: 0.7),
+                            style: TextStyle(color: Colors.white, height: 0),
                           ),
                           SizedBox(
                             width: 50,
@@ -187,18 +191,21 @@ class Home extends State<HomeState> {
                               style: TextStyle(
                                   color: Colors.white, fontSize: 25, height: 1),
                               inputFormatters: <TextInputFormatter>[
-                                WhitelistingTextInputFormatter.digitsOnly,
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9]')),
                                 LengthLimitingTextInputFormatter(3),
                               ],
                               decoration: const InputDecoration.collapsed(
                                   hintText: "0",
-                                  hintStyle: TextStyle(color: Colors.white)),
+                                  hintStyle: TextStyle(
+                                      color: Colors.white, height: 1.2)),
                               onChanged: (newNumber) => {
                                 temp.maxHp = int.parse(newNumber),
                                 updateMaxHp(temp, temp.maxHp),
                               },
                             ),
                           ),
+                          SizedBox(height: 10),
                         ],
                       ),
                     ],
@@ -221,9 +228,11 @@ class Home extends State<HomeState> {
                         textScaleFactor: 1.5,
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
+                      SizedBox(height: 10),
                       TextFormField(
                         initialValue: temp.initiative.toString(),
-                        keyboardType: TextInputType.numberWithOptions(signed: true),
+                        keyboardType:
+                            TextInputType.numberWithOptions(signed: true),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white, fontSize: 25, height: 1),
@@ -264,21 +273,23 @@ class Home extends State<HomeState> {
                         textScaleFactor: 1.5,
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
+                      SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           SizedBox(
-                            width: 30,
+                            width: 20,
                             height: 50,
                             child: TextFormField(
                               initialValue: temp.hitdice.toString(),
                               keyboardType: TextInputType.number,
-                              textAlign: TextAlign.center,
+                              textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 25, height: 1),
                               inputFormatters: <TextInputFormatter>[
-                                WhitelistingTextInputFormatter.digitsOnly,
-                                LengthLimitingTextInputFormatter(3),
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9]')),
+                                LengthLimitingTextInputFormatter(1),
                               ],
                               decoration: const InputDecoration.collapsed(
                                   hintText: "0",
@@ -289,10 +300,15 @@ class Home extends State<HomeState> {
                               },
                             ),
                           ),
-                          Text(
-                            "d",
-                            textScaleFactor: 2,
-                            style: TextStyle(color: Colors.white, height: 0.7),
+                          SizedBox(
+                            width: 20,
+                            height: 10,
+                            child: Text(
+                              "d",
+                              textScaleFactor: 2,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white, height: 0),
+                            ),
                           ),
                           SizedBox(
                             width: 30,
@@ -304,7 +320,8 @@ class Home extends State<HomeState> {
                               style: TextStyle(
                                   color: Colors.white, fontSize: 25, height: 1),
                               inputFormatters: <TextInputFormatter>[
-                                WhitelistingTextInputFormatter.digitsOnly,
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9]')),
                                 LengthLimitingTextInputFormatter(3),
                               ],
                               decoration: const InputDecoration.collapsed(
@@ -338,14 +355,15 @@ class Home extends State<HomeState> {
                         textScaleFactor: 1.5,
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
+                      SizedBox(height: 8),
                       TextFormField(
                         initialValue: temp.proficiencyBonus.toString(),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.white, fontSize: 25, height: 0.7),
+                            color: Colors.white, fontSize: 25, height: 1),
                         inputFormatters: <TextInputFormatter>[
-                          WhitelistingTextInputFormatter.digitsOnly,
+                          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                           LengthLimitingTextInputFormatter(3),
                         ],
                         decoration: const InputDecoration.collapsed(
@@ -360,6 +378,7 @@ class Home extends State<HomeState> {
                           }),
                         },
                       ),
+                      SizedBox(height: 10),
                       Text(
                         "Bonus",
                         textAlign: TextAlign.center,
@@ -386,13 +405,16 @@ class Home extends State<HomeState> {
                         textScaleFactor: 1.5,
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
+                      SizedBox(height: 10),
                       TextFormField(
                         initialValue: temp.speed.toString(),
-                        keyboardType: TextInputType.numberWithOptions(signed: true),
+                        keyboardType:
+                            TextInputType.numberWithOptions(signed: true),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white, fontSize: 25, height: 1),
                         inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                           LengthLimitingTextInputFormatter(3),
                         ],
                         decoration: const InputDecoration.collapsed(
@@ -430,6 +452,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       Strength(),
+                      SizedBox(height: 20),
                       StrengthBonus(),
                     ],
                   ),
@@ -452,6 +475,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       Dexterity(),
+                      SizedBox(height: 20),
                       DexterityBonus(),
                     ],
                   ),
@@ -474,6 +498,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       Constitution(),
+                      SizedBox(height: 20),
                       ConstitutionBonus(),
                     ],
                   ),
@@ -502,6 +527,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       Intelligence(),
+                      SizedBox(height: 20),
                       IntelligenceBonus(),
                     ],
                   ),
@@ -524,6 +550,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       Wisdom(),
+                      SizedBox(height: 20),
                       WisdomBonus(),
                     ],
                   ),
@@ -546,6 +573,7 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       Charisma(),
+                      SizedBox(height: 20),
                       CharismaBonus(),
                     ],
                   ),
