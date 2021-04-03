@@ -28,14 +28,52 @@ class SkillsState extends State<Skills> {
   TextEditingController intimidationController;
   TextEditingController performanceController;
   TextEditingController persuasionController;
+  TextEditingController proficiencyController;
   @override
   void initState() {
-    savStrController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savStr.toString(),
-            globals.temp2.profSavStr, globals.temp2.proficiencyBonus));
+    super.initState();
+  }
+
+  void dispose() {
+    athleticsController?.dispose();
+    savStrController?.dispose();
+    savDexController?.dispose();
+    acrobaticsController?.dispose();
+    stealthController?.dispose();
+    sleightController?.dispose();
+    savConController?.dispose();
+    savIntController?.dispose();
+    arcanaController?.dispose();
+    historyController?.dispose();
+    investigationController?.dispose();
+    natureController?.dispose();
+    religionController?.dispose();
+    savWisController?.dispose();
+    animalController?.dispose();
+    insightController?.dispose();
+    medicineController?.dispose();
+    perceptionController?.dispose();
+    survivalController?.dispose();
+    savChaController?.dispose();
+    deceptionController?.dispose();
+    intimidationController?.dispose();
+    performanceController?.dispose();
+    persuasionController?.dispose();
+    proficiencyController?.dispose();
+    super.dispose();
+  }
+  
+  Widget build(BuildContext context) {
+    proficiencyController = TextEditingController(
+      text: globals.temp2.proficiencyBonus.toString()
+    );
+    
     athleticsController = TextEditingController(
         text: checkIfProficient(globals.temp2.athletics.toString(),
             globals.temp2.profAthletics, globals.temp2.proficiencyBonus));
+    savStrController = TextEditingController(
+        text: checkIfProficient(globals.temp2.savStr.toString(),globals.temp2.profSavStr, globals.temp2.proficiencyBonus),
+        );
     savDexController = TextEditingController(
         text: checkIfProficient(globals.temp2.savDex.toString(),
             globals.temp2.profSavDex, globals.temp2.proficiencyBonus));
@@ -102,185 +140,30 @@ class SkillsState extends State<Skills> {
     persuasionController = TextEditingController(
         text: checkIfProficient(globals.temp2.persuasion.toString(),
             globals.temp2.profPersuasion, globals.temp2.proficiencyBonus));
-    super.initState();
-  }
-
-  void dispose() {
-    athleticsController?.dispose();
-    savStrController?.dispose();
-    savDexController?.dispose();
-    acrobaticsController?.dispose();
-    stealthController?.dispose();
-    sleightController?.dispose();
-    savConController?.dispose();
-    savIntController?.dispose();
-    arcanaController?.dispose();
-    historyController?.dispose();
-    investigationController?.dispose();
-    natureController?.dispose();
-    religionController?.dispose();
-    savWisController?.dispose();
-    animalController?.dispose();
-    insightController?.dispose();
-    medicineController?.dispose();
-    perceptionController?.dispose();
-    survivalController?.dispose();
-    savChaController?.dispose();
-    deceptionController?.dispose();
-    intimidationController?.dispose();
-    performanceController?.dispose();
-    persuasionController?.dispose();
-    super.dispose();
-  }
-
-  Widget build(BuildContext context) {
-    print(globals.temp2.savStr);
-    var _value;
-    var athColor;
-    var savingDexColor;
-    var acrobaticsColor;
-    var stealthColor;
-    var sleightColor;
-    var conColor;
-    var intColor;
-    var arcanaColor;
-    var historyColor;
-    var natureColor;
-    var rColor;
-    var investigationColor;
-    var wisColor;
-    var animalColor;
-    var insightColor;
-    var medicineColor;
-    var perceptionColor;
-    var survivalColor;
-    var chaColor;
-    var deceptionColor;
-    var intimidationColor;
-    var performanceColor;
-    var persuasionColor;
-
-    if (globals.temp2.profSavStr == 0) {
-      _value = Colors.white;
-    } else {
-      _value = Colors.black;
-    }
-    if (globals.temp2.profAthletics == 0) {
-      athColor = Colors.white;
-    } else {
-      athColor = Colors.black;
-    }
-    if (globals.temp2.profSavDex == 0) {
-      savingDexColor = Colors.white;
-    } else {
-      savingDexColor = Colors.black;
-    }
-    if (globals.temp2.profAcrobatics == 0) {
-      acrobaticsColor = Colors.white;
-    } else {
-      acrobaticsColor = Colors.black;
-    }
-    if (globals.temp2.profStealth == 0) {
-      stealthColor = Colors.white;
-    } else {
-      stealthColor = Colors.black;
-    }
-    if (globals.temp2.profSleight == 0) {
-      sleightColor = Colors.white;
-    } else {
-      sleightColor = Colors.black;
-    }
-    if (globals.temp2.profSavCon == 0) {
-      conColor = Colors.white;
-    } else {
-      conColor = Colors.black;
-    }
-    if (globals.temp2.profSaveInt == 0) {
-      intColor = Colors.white;
-    } else {
-      intColor = Colors.black;
-    }
-    if (globals.temp2.profArcana == 0) {
-      arcanaColor = Colors.white;
-    } else {
-      arcanaColor = Colors.black;
-    }
-    if (globals.temp2.profHistory == 0) {
-      historyColor = Colors.white;
-    } else {
-      historyColor = Colors.black;
-    }
-    if (globals.temp2.profNature == 0) {
-      natureColor = Colors.white;
-    } else {
-      natureColor = Colors.black;
-    }
-    if (globals.temp2.profReligion == 0) {
-      rColor = Colors.white;
-    } else {
-      rColor = Colors.black;
-    }
-    if (globals.temp2.profSavWis == 0) {
-      wisColor = Colors.white;
-    } else {
-      wisColor = Colors.black;
-    }
-    if (globals.temp2.profAnimal == 0) {
-      animalColor = Colors.white;
-    } else {
-      animalColor = Colors.black;
-    }
-    if (globals.temp2.profInsight == 0) {
-      insightColor = Colors.white;
-    } else {
-      insightColor = Colors.black;
-    }
-    if (globals.temp2.profMedicine == 0) {
-      medicineColor = Colors.white;
-    } else {
-      medicineColor = Colors.black;
-    }
-    if (globals.temp2.profPerception == 0) {
-      perceptionColor = Colors.white;
-    } else {
-      perceptionColor = Colors.black;
-    }
-    if (globals.temp2.profSurvival == 0) {
-      survivalColor = Colors.white;
-    } else {
-      survivalColor = Colors.black;
-    }
-    if (globals.temp2.profInvestigation == 0) {
-      investigationColor = Colors.white;
-    } else {
-      investigationColor = Colors.black;
-    }
-    if (globals.temp2.profSavCha == 0) {
-      chaColor = Colors.white;
-    } else {
-      chaColor = Colors.black;
-    }
-    if (globals.temp2.profDeception == 0) {
-      deceptionColor = Colors.white;
-    } else {
-      deceptionColor = Colors.black;
-    }
-    if (globals.temp2.profIntimidation == 0) {
-      intimidationColor = Colors.white;
-    } else {
-      intimidationColor = Colors.black;
-    }
-    if (globals.temp2.profPerformance == 0) {
-      performanceColor = Colors.white;
-    } else {
-      performanceColor = Colors.black;
-    }
-    if (globals.temp2.profPersuasion == 0) {
-      persuasionColor = Colors.white;
-    } else {
-      persuasionColor = Colors.black;
-    }
-
+    savStrController.selection = TextSelection.fromPosition(TextPosition(offset: savStrController.text.length));
+    athleticsController.selection = TextSelection.fromPosition(TextPosition(offset: athleticsController.text.length));
+    acrobaticsController.selection = TextSelection.fromPosition(TextPosition(offset: acrobaticsController.text.length));
+    savDexController.selection = TextSelection.fromPosition(TextPosition(offset: savDexController.text.length));
+    stealthController.selection = TextSelection.fromPosition(TextPosition(offset: stealthController.text.length));
+    sleightController.selection = TextSelection.fromPosition(TextPosition(offset: sleightController.text.length));
+    savConController.selection = TextSelection.fromPosition(TextPosition(offset: savConController.text.length));
+    savIntController.selection = TextSelection.fromPosition(TextPosition(offset: savIntController.text.length));
+    arcanaController.selection = TextSelection.fromPosition(TextPosition(offset: arcanaController.text.length));
+    historyController.selection = TextSelection.fromPosition(TextPosition(offset: historyController.text.length));
+    investigationController.selection = TextSelection.fromPosition(TextPosition(offset: investigationController.text.length));
+    natureController.selection = TextSelection.fromPosition(TextPosition(offset: natureController.text.length));
+    religionController.selection = TextSelection.fromPosition(TextPosition(offset: religionController.text.length));
+    savWisController.selection = TextSelection.fromPosition(TextPosition(offset: savWisController.text.length));
+    animalController.selection = TextSelection.fromPosition(TextPosition(offset: animalController.text.length));
+    insightController.selection = TextSelection.fromPosition(TextPosition(offset: insightController.text.length));
+    medicineController.selection = TextSelection.fromPosition(TextPosition(offset: medicineController.text.length));
+    perceptionController.selection = TextSelection.fromPosition(TextPosition(offset: perceptionController.text.length));
+    survivalController.selection = TextSelection.fromPosition(TextPosition(offset: survivalController.text.length));
+    savChaController.selection = TextSelection.fromPosition(TextPosition(offset: savChaController.text.length));
+    deceptionController.selection = TextSelection.fromPosition(TextPosition(offset: deceptionController.text.length));
+    intimidationController.selection = TextSelection.fromPosition(TextPosition(offset: intimidationController.text.length));
+    performanceController.selection = TextSelection.fromPosition(TextPosition(offset: performanceController.text.length));
+    persuasionController.selection = TextSelection.fromPosition(TextPosition(offset: persuasionController.text.length));
     return Column(
       children: <Widget>[
         Row(
@@ -317,7 +200,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: _value,
+                color: changeProfColor(globals.temp2.profSavStr),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -350,21 +233,17 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
-                    hintText: "0", hintStyle: TextStyle(color: Colors.white)),
+                    hintText: "0", hintStyle: TextStyle(color: Colors.white)
+                    ),
                 onChanged: (newText) => {
                   setState(() {
                     globals.temp2.savStr = int.parse(newText);
                     updateSavStr(globals.temp2, globals.temp2.savStr);
-                    if(globals.temp2.profSavStr == 1){
-                        globals.temp2.profSavStr = 0;
-                        updateProfSavStr(globals.temp2, globals.temp2.profSavStr);
-                      }
                   }),
                 },
               ),
@@ -393,7 +272,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: athColor,
+                color: changeProfColor(globals.temp2.profAthletics),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -426,10 +305,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -438,10 +315,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.athletics = int.parse(newText);
                     updateAthletics(globals.temp2, globals.temp2.athletics);
-                    if(globals.temp2.profAthletics == 1){
-                        globals.temp2.profAthletics = 0;
-                        updateProfAthletics(globals.temp2, globals.temp2.profAthletics);
-                      }
                   }),
                 },
               ),
@@ -494,7 +367,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: savingDexColor,
+                color: changeProfColor(globals.temp2.profSavDex),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -526,10 +399,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -538,10 +409,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.savDex = int.parse(newText);
                     updateSavDex(globals.temp2, globals.temp2.savDex);
-                    if(globals.temp2.profSavDex == 1){
-                        globals.temp2.profSavDex = 0;
-                        updateProfSavDex(globals.temp2, globals.temp2.profSavDex);
-                      }
                   }),
                 },
               ),
@@ -570,7 +437,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: acrobaticsColor,
+                color: changeProfColor(globals.temp2.profAcrobatics),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -602,10 +469,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -614,10 +479,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.acrobatics = int.parse(newText);
                     updateAcrobatics(globals.temp2, globals.temp2.acrobatics);
-                    if(globals.temp2.profAcrobatics == 1){
-                        globals.temp2.profAcrobatics = 0;
-                        updateProfAcrobatics(globals.temp2, globals.temp2.profAcrobatics);
-                      }
                   }),
                 },
               ),
@@ -646,7 +507,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: stealthColor,
+                color: changeProfColor(globals.temp2.profStealth),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -678,10 +539,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -690,10 +549,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.stealth = int.parse(newText);
                     updateStealth(globals.temp2, globals.temp2.stealth);
-                    if(globals.temp2.profStealth == 1){
-                        globals.temp2.profStealth = 0;
-                        updateProfStealth(globals.temp2, globals.temp2.profStealth);
-                      }
                   }),
                 },
               ),
@@ -722,7 +577,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: sleightColor,
+                color: changeProfColor(globals.temp2.profSleight),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -754,8 +609,7 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(3),
                 ],
@@ -765,10 +619,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.sleight = int.parse(newText);
                     updateSleight(globals.temp2, globals.temp2.sleight);
-                    if(globals.temp2.profSleight == 1){
-                        globals.temp2.profSleight = 0;
-                        updateProfSleight(globals.temp2, globals.temp2.profSleight);
-                      }
                   }),
                 },
               ),
@@ -822,7 +672,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: conColor,
+                color: changeProfColor(globals.temp2.profSavCon),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -854,10 +704,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -866,10 +714,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.savCon = int.parse(newText);
                     updateSavCon(globals.temp2, globals.temp2.savCon);
-                    if(globals.temp2.profSavCon == 1){
-                        globals.temp2.profSavCon = 0;
-                        updateProfSavCon(globals.temp2, globals.temp2.profSavCon);
-                      }
                   }),
                 },
               ),
@@ -922,7 +766,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: intColor,
+                color: changeProfColor(globals.temp2.profSaveInt),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -954,10 +798,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -966,10 +808,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.savInt = int.parse(newText);
                     updateSavInt(globals.temp2, globals.temp2.savInt);
-                    if(globals.temp2.profSaveInt == 1){
-                        globals.temp2.profSaveInt = 0;
-                        updateProfSaveInt(globals.temp2, globals.temp2.profSaveInt);
-                      }
                   }),
                 },
               ),
@@ -998,7 +836,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: arcanaColor,
+                color: changeProfColor(globals.temp2.profArcana),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1030,10 +868,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1042,10 +878,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.arcana = int.parse(newText);
                     updateArcana(globals.temp2, globals.temp2.arcana);
-                    if(globals.temp2.profArcana == 1){
-                        globals.temp2.profArcana = 0;
-                        updateProfArcana(globals.temp2, globals.temp2.profArcana);
-                      }
                   }),
                 },
               ),
@@ -1074,7 +906,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: historyColor,
+                color: changeProfColor(globals.temp2.profHistory),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1106,10 +938,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1118,10 +948,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.history = int.parse(newText);
                     updateHistory(globals.temp2, globals.temp2.history);
-                    if(globals.temp2.profHistory == 1){
-                        globals.temp2.profHistory = 0;
-                        updateProfHistory(globals.temp2, globals.temp2.profHistory);
-                      }
                   }),
                 },
               ),
@@ -1150,7 +976,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: investigationColor,
+                color: changeProfColor(globals.temp2.profInvestigation),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1182,10 +1008,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1193,11 +1017,8 @@ class SkillsState extends State<Skills> {
                 onChanged: (newText) => {
                   setState(() {
                     globals.temp2.history = int.parse(newText);
-                    updateInvestigation(globals.temp2, globals.temp2.investigation);
-                    if(globals.temp2.profInvestigation == 1){
-                        globals.temp2.profInvestigation = 0;
-                        updateProfInvestigation(globals.temp2, globals.temp2.profInvestigation);
-                      }
+                    updateInvestigation(
+                        globals.temp2, globals.temp2.investigation);
                   }),
                 },
               ),
@@ -1226,7 +1047,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: natureColor,
+                color: changeProfColor(globals.temp2.profNature),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1258,10 +1079,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1270,10 +1089,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.nature = int.parse(newText);
                     updateNature(globals.temp2, globals.temp2.nature);
-                    if(globals.temp2.profNature == 1){
-                        globals.temp2.profNature = 0;
-                        updateProfNature(globals.temp2, globals.temp2.profNature);
-                      }
                   }),
                 },
               ),
@@ -1302,7 +1117,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: rColor,
+                color: changeProfColor(globals.temp2.profReligion),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1334,10 +1149,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1346,10 +1159,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.religion = int.parse(newText);
                     updateReligion(globals.temp2, globals.temp2.religion);
-                    if(globals.temp2.profReligion == 1){
-                        globals.temp2.profReligion = 0;
-                        updateProfReligion(globals.temp2, globals.temp2.profReligion);
-                      }
                   }),
                 },
               ),
@@ -1402,7 +1211,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: wisColor,
+                color: changeProfColor(globals.temp2.profSavWis),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1434,10 +1243,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1446,10 +1253,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.savWis = int.parse(newText);
                     updateSavWis(globals.temp2, globals.temp2.savWis);
-                    if(globals.temp2.profSavWis == 1){
-                        globals.temp2.profSavWis = 0;
-                        updateProfSavWis(globals.temp2, globals.temp2.profSavWis);
-                      }
                   }),
                 },
               ),
@@ -1478,7 +1281,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: animalColor,
+                color: changeProfColor(globals.temp2.profAnimal),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1510,10 +1313,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1522,10 +1323,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.animal = int.parse(newText);
                     updateAnimal(globals.temp2, globals.temp2.animal);
-                    if(globals.temp2.profAnimal == 1){
-                        globals.temp2.profAnimal = 0;
-                        updateProfAnimal(globals.temp2, globals.temp2.profAnimal);
-                      }
                   }),
                 },
               ),
@@ -1554,7 +1351,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: insightColor,
+                color: changeProfColor(globals.temp2.profInsight),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1586,10 +1383,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1598,10 +1393,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.insight = int.parse(newText);
                     updateInsight(globals.temp2, globals.temp2.insight);
-                    if(globals.temp2.profInsight == 1){
-                        globals.temp2.profInsight = 0;
-                        updateProfInsight(globals.temp2, globals.temp2.profInsight);
-                      }
                   }),
                 },
               ),
@@ -1630,7 +1421,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: medicineColor,
+                color: changeProfColor(globals.temp2.profMedicine),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1662,10 +1453,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1674,10 +1463,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.medicine = int.parse(newText);
                     updateMedicine(globals.temp2, globals.temp2.medicine);
-                    if(globals.temp2.profMedicine == 1){
-                        globals.temp2.profMedicine = 0;
-                        updateProfMedicine(globals.temp2, globals.temp2.profMedicine);
-                      }
                   }),
                 },
               ),
@@ -1706,7 +1491,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: perceptionColor,
+                color: changeProfColor(globals.temp2.profPerception),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1738,10 +1523,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1750,10 +1533,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.perception = int.parse(newText);
                     updatePerception(globals.temp2, globals.temp2.perception);
-                    if(globals.temp2.profPerception == 1){
-                        globals.temp2.profPerception = 0;
-                        updateProfPerception(globals.temp2, globals.temp2.profPerception);
-                      }
                   }),
                 },
               ),
@@ -1782,7 +1561,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: survivalColor,
+                color: changeProfColor(globals.temp2.profSurvival),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1814,10 +1593,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1826,10 +1603,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.survival = int.parse(newText);
                     updateSurvival(globals.temp2, globals.temp2.survival);
-                    if(globals.temp2.profSurvival == 1){
-                        globals.temp2.profSurvival = 0;
-                        updateProfSurvival(globals.temp2, globals.temp2.profSurvival);
-                      }
                   }),
                 },
               ),
@@ -1882,7 +1655,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: chaColor,
+                color: changeProfColor(globals.temp2.profSavCha),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1914,10 +1687,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -1926,10 +1697,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.savCha = int.parse(newText);
                     updateSavCha(globals.temp2, globals.temp2.savCha);
-                    if(globals.temp2.profSavCha == 1){
-                        globals.temp2.profSavCha = 0;
-                        updateProfSavCha(globals.temp2, globals.temp2.profSavCha);
-                      }
                   }),
                 },
               ),
@@ -1958,7 +1725,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: deceptionColor,
+                color: changeProfColor(globals.temp2.profDeception),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -1990,10 +1757,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -2002,10 +1767,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.deception = int.parse(newText);
                     updateDeception(globals.temp2, globals.temp2.deception);
-                    if(globals.temp2.profDeception == 1){
-                        globals.temp2.profDeception = 0;
-                        updateProfDeception(globals.temp2, globals.temp2.profDeception);
-                      }
                   }),
                 },
               ),
@@ -2034,7 +1795,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: intimidationColor,
+                color: changeProfColor(globals.temp2.profIntimidation),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -2066,10 +1827,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -2077,11 +1836,8 @@ class SkillsState extends State<Skills> {
                 onChanged: (newText) => {
                   setState(() {
                     globals.temp2.intimidation = int.parse(newText);
-                    updateIntimidation(globals.temp2, globals.temp2.intimidation);
-                    if(globals.temp2.profIntimidation == 1){
-                        globals.temp2.profIntimidation = 0;
-                        updateProfIntimidation(globals.temp2, globals.temp2.profIntimidation);
-                      }
+                    updateIntimidation(
+                        globals.temp2, globals.temp2.intimidation);
                   }),
                 },
               ),
@@ -2110,7 +1866,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: performanceColor,
+                color: changeProfColor(globals.temp2.profPerformance),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -2142,10 +1898,8 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
-                  
                   LengthLimitingTextInputFormatter(3),
                 ],
                 decoration: const InputDecoration.collapsed(
@@ -2154,10 +1908,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.performance = int.parse(newText);
                     updatePerformance(globals.temp2, globals.temp2.performance);
-                    if(globals.temp2.profPerformance == 1){
-                        globals.temp2.profPerformance = 0;
-                        updateProfPerformance(globals.temp2, globals.temp2.profPerformance);
-                      }
                   }),
                 },
               ),
@@ -2186,7 +1936,7 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: persuasionColor,
+                color: changeProfColor(globals.temp2.profPersuasion),
                 child: InkWell(
                   onTap: () {
                     setState(() {
@@ -2218,8 +1968,7 @@ class SkillsState extends State<Skills> {
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.white, fontSize: 25, height: 1),
+                style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(3),
                 ],
@@ -2229,10 +1978,6 @@ class SkillsState extends State<Skills> {
                   setState(() {
                     globals.temp2.persuasion = int.parse(newText);
                     updatePersuasion(globals.temp2, globals.temp2.persuasion);
-                    if(globals.temp2.profPersuasion == 1){
-                        globals.temp2.profPersuasion = 0;
-                        updateProfPersuasion(globals.temp2, globals.temp2.profPersuasion);
-                      }
                   }),
                 },
               ),

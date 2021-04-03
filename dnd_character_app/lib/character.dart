@@ -36,11 +36,23 @@ class Home extends State<HomeState> {
     }
   }
 
+  TextEditingController proficiencyController;
+  void initState() {
+    super.initState();
+  }
+  void dispose() {
+    proficiencyController?.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     Pharacter temp = ModalRoute.of(context).settings.arguments;
     globals.temp2 = temp;
     print(temp.toString());
+    proficiencyController = TextEditingController(
+      text: globals.temp2.proficiencyBonus.toString(),
+    );
+    proficiencyController.selection = TextSelection.fromPosition(TextPosition(offset: proficiencyController.text.length));
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -357,7 +369,8 @@ class Home extends State<HomeState> {
                       ),
                       SizedBox(height: 8),
                       TextFormField(
-                        initialValue: temp.proficiencyBonus.toString(),
+                        initialValue: null,
+                        controller: proficiencyController,
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         style: TextStyle(

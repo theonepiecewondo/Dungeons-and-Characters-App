@@ -1,6 +1,7 @@
 import 'package:dnd_character_app/widgets/characterModel.dart';
 import 'package:dnd_character_app/widgets/database.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 modifier(var bonus) {
   bonus = bonus - 10;
@@ -32,6 +33,16 @@ checkIfProficient(String mod, int prof, int bonus){
     }
     else{
       return mod;
+    }
+}
+changeProfColor(int prof){
+  var color;
+  if (prof == 0) {
+      color = Colors.white;
+      return color;
+    } else {
+      color = Colors.black;
+      return color;
     }
 }
 
