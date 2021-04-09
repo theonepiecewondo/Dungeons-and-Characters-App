@@ -42,7 +42,7 @@ class Pharacter {
   int intimidation;
   int performance;
   int persuasion;
-  //bool values
+  //int "bool" values
   int profSavStr;
   int profAthletics;
   int profSavDex;

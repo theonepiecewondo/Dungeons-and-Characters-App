@@ -35,6 +35,9 @@ checkIfProficient(String mod, int prof, int bonus){
       return mod;
     }
 }
+changeProfBonusBool(int mod,bool type){
+  return mod;
+}
 changeProfColor(int prof){
   var color;
   if (prof == 0) {
