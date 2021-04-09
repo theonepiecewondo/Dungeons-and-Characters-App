@@ -18,12 +18,18 @@ class StrengthState extends State<Strength> {
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-        onChanged: (String str) {
+        onFieldSubmitted: (String str) {
+          //Gather a difference between the current modifier bonus and the one that the user will be inputting to affect associated skills
+          var difference = modifier(int.parse(str));
+          //use our bonus modifier function to calculate the new bonus modifer
           var bonus = modifier(globals.temp2.str);
-          bonus = bonus.toString();
+          //determine the difference for adding to various skills later on. Negatives count here
+          difference = difference - bonus;
           globals.temp2.str = int.parse(str);
+          //update all strength related skills according to difference
+          updateStrengthSkills(globals.temp2,difference);
           updateStr(globals.temp2, globals.temp2.str);
-          return globals.stats['Strength'] = bonus;
+          return globals.stats['Strength'] = bonus.toString();
         });
   }
 }
@@ -43,12 +49,14 @@ class DexterityState extends State<Dexterity> {
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-        onChanged: (String str) {
-          var bonus = modifier(int.parse(str));
-          bonus = bonus.toString();
-          globals.stats['Dexterity'] = bonus;
+        onFieldSubmitted: (String str) {
+          var difference = modifier(int.parse(str));
+          var bonus = modifier(globals.temp2.dex);
+          difference = difference - bonus;
           globals.temp2.dex = int.parse(str);
+          updateDexteritySkills(globals.temp2, difference);
           updateDex(globals.temp2, globals.temp2.dex);
+          return globals.stats['Dexterity'] = bonus.toString();
         });
   }
 }
@@ -68,12 +76,14 @@ class ConstitutionState extends State<Constitution> {
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-        onChanged: (String str) {
-          var bonus = modifier(int.parse(str));
-          bonus = bonus.toString();
-          globals.stats['Constitution'] = bonus;
+        onFieldSubmitted: (String str) {
+          var difference = modifier(int.parse(str));
+          var bonus = modifier(globals.temp2.con);
+          difference = difference - bonus;
           globals.temp2.con = int.parse(str);
+          globals.temp2.savCon = globals.temp2.savCon + difference;
           updateCon(globals.temp2, globals.temp2.con);
+          return globals.stats['Constitution'] = bonus.toString();
         });
   }
 }
@@ -93,12 +103,14 @@ class IntelligenceState extends State<Intelligence> {
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-        onChanged: (String str) {
-          var bonus = modifier(int.parse(str));
-          bonus = bonus.toString();
-          globals.stats['Intelligence'] = bonus;
-          globals.temp2.intelligence = int.parse(str);
+        onFieldSubmitted: (String str) {
+          var difference = modifier(int.parse(str));
+          var bonus = modifier(globals.temp2.intelligence);
+          difference = difference - bonus;
+          globals.temp2.intelligence= int.parse(str);
+          updateIntelligenceSkills(globals.temp2, difference);
           updateIntelligence(globals.temp2, globals.temp2.intelligence);
+          return globals.stats['Intelligence'] = bonus.toString();
         });
   }
 }
@@ -118,12 +130,14 @@ class WisdomState extends State<Wisdom> {
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-        onChanged: (String str) {
-          var bonus = modifier(int.parse(str));
-          bonus = bonus.toString();
-          globals.stats['Wisdom'] = bonus;
+        onFieldSubmitted: (String str) {
+          var difference = modifier(int.parse(str));
+          var bonus = modifier(globals.temp2.wis);
+          difference = difference - bonus;
           globals.temp2.wis = int.parse(str);
+          updateWisdomSkills(globals.temp2, difference);
           updateWis(globals.temp2, globals.temp2.wis);
+          return globals.stats['Wisdom'] = bonus.toString();
         });
   }
 }
@@ -143,12 +157,14 @@ class CharismaState extends State<Charisma> {
         ],
         decoration: const InputDecoration.collapsed(
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-        onChanged: (cha) {
-          var bonus = modifier(int.parse(cha));
-          bonus = bonus.toString();
-          globals.stats['Charisma'] = bonus;
-          globals.temp2.cha = int.parse(cha);
+        onFieldSubmitted: (str) {
+          var difference = modifier(int.parse(str));
+          var bonus = modifier(globals.temp2.cha);
+          difference = difference - bonus;
+          globals.temp2.cha = int.parse(str);
+          updateCharismaSkills(globals.temp2, difference);
           updateCha(globals.temp2, globals.temp2.cha);
+          return globals.stats['Charisma'] = bonus.toString();
         });
   }
 }

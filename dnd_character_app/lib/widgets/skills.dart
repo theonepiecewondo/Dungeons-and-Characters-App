@@ -332,7 +332,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profAthletics == 1){
                       globals.temp2.athletics = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -423,7 +423,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSavDex == 1){
                       globals.temp2.savDex = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -490,7 +490,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profAcrobatics == 1){
                       globals.temp2.acrobatics = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -557,7 +557,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profStealth == 1){
                       globals.temp2.stealth = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -624,7 +624,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSleight == 1){
                       globals.temp2.sleight = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -716,7 +716,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSavCon == 1){
                       globals.temp2.savCon = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -807,7 +807,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSaveInt == 1){
                       globals.temp2.savInt = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -874,7 +874,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profArcana == 1){
                       globals.temp2.arcana = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -941,7 +941,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profHistory == 1){
                       globals.temp2.history = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1008,7 +1008,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profInvestigation == 1){
                       globals.temp2.investigation = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1076,7 +1076,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profNature == 1){
                       globals.temp2.nature = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1143,7 +1143,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profReligion == 1){
                       globals.temp2.religion = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1234,7 +1234,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSavWis == 1){
                       globals.temp2.savWis = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1301,7 +1301,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profAnimal == 1){
                       globals.temp2.animal = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1368,7 +1368,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profInsight == 1){
                       globals.temp2.insight = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1435,7 +1435,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profMedicine == 1){
                       globals.temp2.medicine = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1502,7 +1502,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profPerception == 1){
                       globals.temp2.perception = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1569,7 +1569,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSurvival == 1){
                       globals.temp2.survival = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1660,7 +1660,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profSavCha == 1){
                       globals.temp2.savCha = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1727,7 +1727,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profDeception == 1){
                       globals.temp2.deception= int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1794,7 +1794,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profIntimidation == 1){
                       globals.temp2.intimidation = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1862,7 +1862,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profPerformance == 1){
                       globals.temp2.performance = int.parse(newText) - globals.temp2.proficiencyBonus;
@@ -1929,7 +1929,7 @@ class SkillsState extends State<Skills> {
                 ],
                 decoration: const InputDecoration.collapsed(
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
-                onChanged: (newText) => {
+                onFieldSubmitted: (newText) => {
                   setState(() {
                     if(globals.temp2.profPersuasion == 1){
                       globals.temp2.persuasion = int.parse(newText) - globals.temp2.proficiencyBonus;

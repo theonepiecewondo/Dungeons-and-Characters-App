@@ -35,9 +35,6 @@ checkIfProficient(String mod, int prof, int bonus){
       return mod;
     }
 }
-changeProfBonusBool(int mod,bool type){
-  return mod;
-}
 changeProfColor(int prof){
   var color;
   if (prof == 0) {
@@ -49,6 +46,46 @@ changeProfColor(int prof){
     }
 }
 
+updateStrengthSkills(Pharacter temp, var difference){
+  temp.savStr = temp.savStr + difference;
+  temp.athletics = temp.athletics + difference;
+  return temp;
+}
+
+updateDexteritySkills(Pharacter temp, var difference){
+  temp.savDex = temp.savDex + difference;
+  temp.acrobatics = temp.acrobatics + difference;
+  temp.stealth = temp.stealth + difference;
+  temp.sleight = temp.sleight + difference;
+  return temp;
+}
+
+updateIntelligenceSkills(Pharacter temp, var difference){
+  temp.savInt = temp.savInt + difference;
+  temp.arcana = temp.arcana + difference;
+  temp.history = temp.history + difference;
+  temp.investigation = temp.investigation + difference;
+  temp.nature = temp.nature + difference;
+  temp.religion = temp.religion + difference;
+  return temp;
+}
+updateWisdomSkills(Pharacter temp, var difference){
+  temp.savWis = temp.savWis + difference;
+  temp.animal = temp.animal + difference;
+  temp.insight = temp.insight + difference;
+  temp.medicine = temp.medicine + difference;
+  temp.perception = temp.perception + difference;
+  temp.survival = temp.survival + difference;
+  return temp;
+}
+updateCharismaSkills(Pharacter temp, var difference){
+  temp.savCha = temp.savCha + difference;
+  temp.deception = temp.deception + difference;
+  temp.intimidation = temp.intimidation + difference;
+  temp.performance = temp.performance + difference;
+  temp.persuasion = temp.persuasion + difference;
+  return temp;
+}
 Future<Pharacter> calculateStats(Pharacter character) async {
   var dexMod = modifier(character.dex);
   var strMod = modifier(character.str);
