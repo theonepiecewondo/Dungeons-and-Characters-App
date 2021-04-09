@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dnd_character_app/character.dart';
-import 'package:dnd_character_app/widgets/database.dart';
 import 'package:dnd_character_app/widgets/characterModel.dart';
 import 'package:dnd_character_app/widgets/character-functions.dart';
 import 'package:dnd_character_app/widgets/CustomIcons.dart';
-import 'package:dnd_character_app/widgets/globals.dart' as globals;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +65,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               children: <Widget>[
                 TextFormField(
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter(RegExp("[a-zA-Z ]")),
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z ]')),
                       LengthLimitingTextInputFormatter(20),
                     ],
                     decoration: InputDecoration(
@@ -85,7 +82,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                     }),
                 TextFormField(
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter(RegExp("[a-zA-Z ]")),
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z ]')),
                       LengthLimitingTextInputFormatter(20),
                     ],
                     decoration: InputDecoration(
@@ -102,7 +99,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                     }),
                 TextFormField(
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter(RegExp("[a-zA-Z ]")),
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z ]')),
                       LengthLimitingTextInputFormatter(20),
                     ],
                     decoration: InputDecoration(
@@ -120,7 +117,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -139,7 +136,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(3),
                     ],
                     decoration: InputDecoration(
@@ -158,7 +155,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -176,7 +173,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -194,7 +191,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -212,7 +209,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -230,7 +227,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -248,7 +245,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       LengthLimitingTextInputFormatter(2),
                     ],
                     decoration: InputDecoration(
@@ -267,14 +264,16 @@ class MyCustomFormState extends State<MyCustomForm> {
                     margin: EdgeInsets.only(top: 10),
                     child: SizedBox(
                       width: double.infinity,
-                      child: RaisedButton(
-                      color: Colors.blue,
-                      textColor: Colors.white,
+                      child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blue,
+                        onPrimary: Colors.white,
+                      ),
                       onPressed: (){
                         if (formKey.currentState.validate()) {
                           calculateStats(temp);
                           save(temp);
-                          //Navigator.pushNamed(context, '/');
+                          Navigator.pushNamed(context, '/');
                         }
                       },
                       child: Text(

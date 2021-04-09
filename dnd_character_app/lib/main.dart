@@ -1,14 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-import 'package:dnd_character_app/widgets/nav-drawer.dart';
 import 'package:dnd_character_app/character.dart';
 import 'package:dnd_character_app/widgets/database.dart';
 import 'package:dnd_character_app/widgets/characterModel.dart';
 import 'package:dnd_character_app/new-character.dart';
-import 'package:dnd_character_app/widgets/character-functions.dart';
-import 'package:dnd_character_app/widgets/globals.dart' as globals;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

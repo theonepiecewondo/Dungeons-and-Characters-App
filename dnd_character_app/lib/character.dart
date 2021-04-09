@@ -37,22 +37,49 @@ class Home extends State<HomeState> {
   }
 
   TextEditingController proficiencyController;
+  TextEditingController acController;
+  TextEditingController initiativeController;
+  TextEditingController speedController;
   void initState() {
     super.initState();
   }
+
   void dispose() {
     proficiencyController?.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     Pharacter temp = ModalRoute.of(context).settings.arguments;
     globals.temp2 = temp;
-    print(temp.toString());
+    String positive = "";
+    double padright = 0;
+    if (globals.temp2.proficiencyBonus >= 0) {
+      positive = "+";
+      padright = 10;
+    }
+    //print(temp.toString());
     proficiencyController = TextEditingController(
-      text: globals.temp2.proficiencyBonus.toString(),
+      text: positive + globals.temp2.proficiencyBonus.toString(),
     );
-    proficiencyController.selection = TextSelection.fromPosition(TextPosition(offset: proficiencyController.text.length));
+    acController = TextEditingController(
+      text: globals.temp2.ac.toString(),
+    );
+    initiativeController = TextEditingController(
+      text: globals.temp2.initiative.toString(),
+    );
+    speedController = TextEditingController(
+      text: globals.temp2.speed.toString() + " ft",
+    );
+    proficiencyController.selection = TextSelection.fromPosition(
+        TextPosition(offset: proficiencyController.text.length));
+    acController.selection = TextSelection.fromPosition(
+        TextPosition(offset: acController.text.length));
+    initiativeController.selection = TextSelection.fromPosition(
+        TextPosition(offset: initiativeController.text.length));
+    speedController.selection = TextSelection.fromPosition(
+        TextPosition(offset: speedController.text.length-3));
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -120,7 +147,7 @@ class Home extends State<HomeState> {
                       ),
                       SizedBox(height: 10),
                       TextFormField(
-                        initialValue: temp.ac.toString(),
+                        controller: acController,
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -132,7 +159,7 @@ class Home extends State<HomeState> {
                         decoration: InputDecoration.collapsed(
                             hintText: "0",
                             hintStyle: TextStyle(color: Colors.white)),
-                        onChanged: (newAC) => {
+                        onFieldSubmitted: (newAC) => {
                           temp.ac = int.parse(newAC),
                           updateAC(temp, temp.ac),
                         },
@@ -242,7 +269,7 @@ class Home extends State<HomeState> {
                       ),
                       SizedBox(height: 10),
                       TextFormField(
-                        initialValue: temp.initiative.toString(),
+                        controller: initiativeController,
                         keyboardType:
                             TextInputType.numberWithOptions(signed: true),
                         textAlign: TextAlign.center,
@@ -368,28 +395,31 @@ class Home extends State<HomeState> {
                         style: TextStyle(color: Colors.white, height: 1.5),
                       ),
                       SizedBox(height: 8),
-                      TextFormField(
-                        initialValue: null,
-                        controller: proficiencyController,
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white, fontSize: 25, height: 1),
-                        inputFormatters: <TextInputFormatter>[
-                          FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                          LengthLimitingTextInputFormatter(3),
-                        ],
-                        decoration: const InputDecoration.collapsed(
-                            hintText: "0",
-                            hintStyle: TextStyle(color: Colors.white)),
-                        onChanged: (newNumber) => {
-                          setState(() {
-                            temp.proficiencyBonus = int.parse(newNumber);
-                            globals.temp2.proficiencyBonus =
-                                temp.proficiencyBonus;
-                            updateProficiencyBonus(temp, temp.proficiencyBonus);
-                          }),
-                        },
+                      Padding(
+                        padding: EdgeInsets.only(right: padright),
+                        child: TextFormField(
+                          controller: proficiencyController,
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white, fontSize: 25, height: 1),
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                            LengthLimitingTextInputFormatter(3),
+                          ],
+                          decoration: const InputDecoration.collapsed(
+                              hintText: "0",
+                              hintStyle: TextStyle(color: Colors.white)),
+                          onChanged: (newNumber) => {
+                            setState(() {
+                              temp.proficiencyBonus = int.parse(newNumber);
+                              globals.temp2.proficiencyBonus =
+                                  temp.proficiencyBonus;
+                              updateProficiencyBonus(
+                                  temp, temp.proficiencyBonus);
+                            }),
+                          },
+                        ),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -420,7 +450,7 @@ class Home extends State<HomeState> {
                       ),
                       SizedBox(height: 10),
                       TextFormField(
-                        initialValue: temp.speed.toString(),
+                        controller: speedController,
                         keyboardType:
                             TextInputType.numberWithOptions(signed: true),
                         textAlign: TextAlign.center,

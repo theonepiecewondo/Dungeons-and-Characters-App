@@ -54,6 +54,8 @@ class DexterityState extends State<Dexterity> {
           var bonus = modifier(globals.temp2.dex);
           difference = difference - bonus;
           globals.temp2.dex = int.parse(str);
+          globals.temp2.ac = globals.temp2.ac + difference;
+          globals.temp2.initiative = globals.temp2.initiative + difference;
           updateDexteritySkills(globals.temp2, difference);
           updateDex(globals.temp2, globals.temp2.dex);
           return globals.stats['Dexterity'] = bonus.toString();
