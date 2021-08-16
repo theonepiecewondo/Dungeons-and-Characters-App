@@ -2,13 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dnd_character_app/character.dart';
-import 'package:dnd_character_app/widgets/database.dart';
-import 'package:dnd_character_app/widgets/characterModel.dart';
+import 'package:dnd_character_app/services/database.dart';
+import 'package:dnd_character_app/models/characterModel.dart';
+import 'package:dnd_character_app/models/spellModel.dart';
 import 'package:dnd_character_app/new-character.dart';
+import 'package:dnd_character_app/services/spells_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
+  addSpells();
+  /* Early spell testing
+  Spell spell = await DBProvider.db.getSpell("True Strike");
+  List<Pharacter> plist = await DBProvider.db.getpharacters();
+  await DBProvider.db.insertCharacterSpell(spell, plist[0]);
+  */
+
 }
 
 class MyApp extends StatelessWidget {

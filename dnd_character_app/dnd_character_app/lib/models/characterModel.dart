@@ -67,6 +67,9 @@ class Pharacter {
   int profIntimidation;
   int profPerformance;
   int profPersuasion;
+  String spellAbility;
+  int spellAttack;
+  int spellSave;
 
   Pharacter(
       {this.id,
@@ -135,7 +138,10 @@ class Pharacter {
       this.profDeception,
       this.profIntimidation,
       this.profPerformance,
-      this.profPersuasion});
+      this.profPersuasion,
+      this.spellAbility,
+      this.spellAttack,
+      this.spellSave});
 
   Map<String, dynamic> toMap() => {
         "id": id,
@@ -205,9 +211,12 @@ class Pharacter {
         "profIntimidation": profIntimidation,
         "profPerformance": profPerformance,
         "profPersuasion": profPersuasion,
+        "spellAbility": spellAbility,
+        "spellAttack": spellAttack,
+        "spellSave": spellSave,
       };
   @override
   String toString() {
-    return 'Pharacter{id: $id, name: $name, race: $race, Class: $pClass, level: $level, ac: $ac, initiative: $initiative ,hit: $hit, maxHp: $maxHp, proficiencyBonus: $proficiencyBonus, speed: $speed, str: $str, dex: $dex, con: $con, intelligence: $intelligence, wis: $wis, cha: $cha, savStr; $savStr}\n';
+    return 'Pharacter{id: $id, name: $name, race: $race, Class: $pClass, level: $level, ac: $ac, initiative: $initiative ,hit: $hit, maxHp: $maxHp, proficiencyBonus: $proficiencyBonus, speed: $speed, str: $str, dex: $dex, con: $con, intelligence: $intelligence, wis: $wis, cha: $cha, savStr: $savStr spellAbility: $spellAbility, spellAttack: $spellAttack, spellSave: $spellSave}\n';
   }
 }

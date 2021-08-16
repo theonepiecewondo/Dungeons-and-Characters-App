@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'globals.dart' as globals;
+import 'package:dnd_character_app/models/characterModel.dart';
+import 'package:dnd_character_app/services/character-functions.dart';
+
 
 double padright = 0;
 class StrengthBonusState extends State<StrengthBonus> {
   @override
   Widget build(BuildContext context) {
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
+    String modifier = intitModifer(charSession.str);
     String positive = "";
-    if (int.parse(globals.stats['Strength']) >= 0) {
+    if (int.parse(modifier) >= 0) {
       positive = "+";
       padright = 20;
     }
@@ -16,7 +20,7 @@ class StrengthBonusState extends State<StrengthBonus> {
     return Padding(
         padding: EdgeInsets.only(right: padright),
         child: Text(
-          positive + globals.stats['Strength'],
+          positive + modifier,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 35, height: 0.3),
         ));
@@ -25,8 +29,10 @@ class StrengthBonusState extends State<StrengthBonus> {
 class DexterityBonusState extends State<DexterityBonus> {
   @override
   Widget build(BuildContext context) {
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
+    String modifier = intitModifer(charSession.dex);
     String positive = "";
-    if (int.parse(globals.stats['Dexterity']) >= 0) {
+    if (int.parse(modifier) >= 0) {
       positive = "+";
       padright = 20;
     }
@@ -36,7 +42,7 @@ class DexterityBonusState extends State<DexterityBonus> {
     return Padding(
         padding: EdgeInsets.only(right: padright),
         child: Text(
-          positive + globals.stats['Dexterity'],
+          positive + modifier,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 35, height: 0.3),
         ));
@@ -45,8 +51,10 @@ class DexterityBonusState extends State<DexterityBonus> {
 class ConstitutionBonusState extends State<ConstitutionBonus> {
   @override
   Widget build(BuildContext context) {
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
+    String modifier = intitModifer(charSession.con);
     String positive = "";
-    if (int.parse(globals.stats['Constitution']) >= 0) {
+    if (int.parse(modifier) >= 0) {
       positive = "+";
       padright = 20;
     }
@@ -56,7 +64,7 @@ class ConstitutionBonusState extends State<ConstitutionBonus> {
     return Padding(
         padding: EdgeInsets.only(right: padright),
         child: Text(
-          positive + globals.stats['Constitution'],
+          positive + modifier,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 35, height: 0.3),
         ));
@@ -66,7 +74,9 @@ class IntelligenceBonusState extends State<IntelligenceBonus> {
   @override
   Widget build(BuildContext context) {
     String positive = "";
-    if (int.parse(globals.stats['Intelligence']) >= 0) {
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
+    String modifier = intitModifer(charSession.intelligence);
+    if (int.parse(modifier) >= 0) {
       positive = "+";
       padright = 20;
     }
@@ -76,7 +86,7 @@ class IntelligenceBonusState extends State<IntelligenceBonus> {
     return Padding(
         padding: EdgeInsets.only(right: padright),
         child: Text(
-          positive + globals.stats['Intelligence'],
+          positive + modifier,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 35, height: 0.3),
         ));
@@ -85,8 +95,10 @@ class IntelligenceBonusState extends State<IntelligenceBonus> {
 class WisdomBonusState extends State<WisdomBonus> {
   @override
   Widget build(BuildContext context) {
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
+    String modifier = intitModifer(charSession.wis);
     String positive = "";
-    if (int.parse(globals.stats['Wisdom'])>= 0) {
+    if (int.parse(modifier)>= 0) {
       positive = "+";
       padright = 20;
     }
@@ -96,7 +108,7 @@ class WisdomBonusState extends State<WisdomBonus> {
     return Padding(
         padding: EdgeInsets.only(right: padright),
         child: Text(
-          positive + globals.stats['Wisdom'],
+          positive + modifier,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 35, height: 0.3),
         ));
@@ -105,8 +117,10 @@ class WisdomBonusState extends State<WisdomBonus> {
 class CharismaBonusState extends State<CharismaBonus> {
   @override
   Widget build(BuildContext context) {
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
+    String modifier = intitModifer(charSession.cha);
     String positive = "";
-    if (int.parse(globals.stats['Charisma']) >= 0) {
+    if (int.parse(modifier) >= 0) {
       positive = "+";
       padright = 20;
     }
@@ -116,7 +130,7 @@ class CharismaBonusState extends State<CharismaBonus> {
     return Padding(
         padding: EdgeInsets.only(right: padright),
         child: Text(
-          positive + globals.stats['Charisma'],
+          positive + modifier,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white, fontSize: 35, height: 0.3),
         ));

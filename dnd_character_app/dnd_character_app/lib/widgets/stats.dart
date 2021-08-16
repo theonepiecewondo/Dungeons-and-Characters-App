@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'globals.dart' as globals;
-import 'package:dnd_character_app/widgets/character-functions.dart';
+import 'package:dnd_character_app/services/character-functions.dart';
+import 'package:dnd_character_app/models/characterModel.dart';
 
 class StrengthState extends State<Strength> {
   @override
   Widget build(BuildContext context) {
-    globals.stats['Strength'] = intitModifer(globals.temp2.str);
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
     return TextFormField(
-        initialValue: globals.temp2.str.toString(),
+      
+        initialValue: charSession.str.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
@@ -22,14 +23,14 @@ class StrengthState extends State<Strength> {
           //Gather a difference between the current modifier bonus and the one that the user will be inputting to affect associated skills
           var difference = modifier(int.parse(str));
           //use our bonus modifier function to calculate the new bonus modifer
-          var bonus = modifier(globals.temp2.str);
+          var bonus = modifier(charSession.str);
           //determine the difference for adding to various skills later on. Negatives count here
           difference = difference - bonus;
-          globals.temp2.str = int.parse(str);
+          charSession.str = int.parse(str);
           //update all strength related skills according to difference
-          updateStrengthSkills(globals.temp2,difference);
-          updateStr(globals.temp2, globals.temp2.str);
-          return globals.stats['Strength'] = bonus.toString();
+          updateStrengthSkills(charSession,difference);
+          updateCharacter(charSession);
+          return bonus.toString();
         });
   }
 }
@@ -37,9 +38,9 @@ class StrengthState extends State<Strength> {
 class DexterityState extends State<Dexterity> {
   @override
   Widget build(BuildContext context) {
-    globals.stats['Dexterity'] = intitModifer(globals.temp2.dex);
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
     return TextFormField(
-        initialValue: globals.temp2.dex.toString(),
+        initialValue: charSession.dex.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
@@ -51,14 +52,14 @@ class DexterityState extends State<Dexterity> {
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
         onFieldSubmitted: (String str) {
           var difference = modifier(int.parse(str));
-          var bonus = modifier(globals.temp2.dex);
+          var bonus = modifier(charSession.dex);
           difference = difference - bonus;
-          globals.temp2.dex = int.parse(str);
-          globals.temp2.ac = globals.temp2.ac + difference;
-          globals.temp2.initiative = globals.temp2.initiative + difference;
-          updateDexteritySkills(globals.temp2, difference);
-          updateDex(globals.temp2, globals.temp2.dex);
-          return globals.stats['Dexterity'] = bonus.toString();
+          charSession.dex = int.parse(str);
+          charSession.ac = charSession.ac + difference;
+          charSession.initiative = charSession.initiative + difference;
+          updateDexteritySkills(charSession, difference);
+          updateCharacter(charSession);
+          return bonus.toString();
         });
   }
 }
@@ -66,9 +67,9 @@ class DexterityState extends State<Dexterity> {
 class ConstitutionState extends State<Constitution> {
   @override
   Widget build(BuildContext context) {
-    globals.stats['Constitution'] = intitModifer(globals.temp2.con);
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
     return TextFormField(
-        initialValue: globals.temp2.con.toString(),
+        initialValue: charSession.con.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
@@ -80,12 +81,12 @@ class ConstitutionState extends State<Constitution> {
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
         onFieldSubmitted: (String str) {
           var difference = modifier(int.parse(str));
-          var bonus = modifier(globals.temp2.con);
+          var bonus = modifier(charSession.con);
           difference = difference - bonus;
-          globals.temp2.con = int.parse(str);
-          globals.temp2.savCon = globals.temp2.savCon + difference;
-          updateCon(globals.temp2, globals.temp2.con);
-          return globals.stats['Constitution'] = bonus.toString();
+          charSession.con = int.parse(str);
+          charSession.savCon = charSession.savCon + difference;
+          updateCharacter(charSession);
+          return bonus.toString();
         });
   }
 }
@@ -93,9 +94,9 @@ class ConstitutionState extends State<Constitution> {
 class IntelligenceState extends State<Intelligence> {
   @override
   Widget build(BuildContext context) {
-    globals.stats['Intelligence'] = intitModifer(globals.temp2.intelligence);
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
     return TextFormField(
-        initialValue: globals.temp2.intelligence.toString(),
+        initialValue: charSession.intelligence.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
@@ -107,12 +108,12 @@ class IntelligenceState extends State<Intelligence> {
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
         onFieldSubmitted: (String str) {
           var difference = modifier(int.parse(str));
-          var bonus = modifier(globals.temp2.intelligence);
+          var bonus = modifier(charSession.intelligence);
           difference = difference - bonus;
-          globals.temp2.intelligence= int.parse(str);
-          updateIntelligenceSkills(globals.temp2, difference);
-          updateIntelligence(globals.temp2, globals.temp2.intelligence);
-          return globals.stats['Intelligence'] = bonus.toString();
+          charSession.intelligence= int.parse(str);
+          updateIntelligenceSkills(charSession, difference);
+          updateCharacter(charSession);
+          return bonus.toString();
         });
   }
 }
@@ -120,9 +121,9 @@ class IntelligenceState extends State<Intelligence> {
 class WisdomState extends State<Wisdom> {
   @override
   Widget build(BuildContext context) {
-    globals.stats['Wisdom'] = intitModifer(globals.temp2.wis);
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
     return TextFormField(
-        initialValue: globals.temp2.wis.toString(),
+        initialValue: charSession.wis.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
@@ -134,12 +135,12 @@ class WisdomState extends State<Wisdom> {
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
         onFieldSubmitted: (String str) {
           var difference = modifier(int.parse(str));
-          var bonus = modifier(globals.temp2.wis);
+          var bonus = modifier(charSession.wis);
           difference = difference - bonus;
-          globals.temp2.wis = int.parse(str);
-          updateWisdomSkills(globals.temp2, difference);
-          updateWis(globals.temp2, globals.temp2.wis);
-          return globals.stats['Wisdom'] = bonus.toString();
+          charSession.wis = int.parse(str);
+          updateWisdomSkills(charSession, difference);
+          updateCharacter(charSession);
+          return bonus.toString();
         });
   }
 }
@@ -147,9 +148,9 @@ class WisdomState extends State<Wisdom> {
 class CharismaState extends State<Charisma> {
   @override
   Widget build(BuildContext context) {
-    globals.stats['Charisma'] = intitModifer(globals.temp2.cha);
+    Pharacter charSession = ModalRoute.of(context).settings.arguments;
     return TextFormField(
-        initialValue: globals.temp2.cha.toString(),
+        initialValue: charSession.cha.toString(),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25, height: 1),
@@ -161,12 +162,12 @@ class CharismaState extends State<Charisma> {
             hintText: "0", hintStyle: TextStyle(color: Colors.white)),
         onFieldSubmitted: (str) {
           var difference = modifier(int.parse(str));
-          var bonus = modifier(globals.temp2.cha);
+          var bonus = modifier(charSession.cha);
           difference = difference - bonus;
-          globals.temp2.cha = int.parse(str);
-          updateCharismaSkills(globals.temp2, difference);
-          updateCha(globals.temp2, globals.temp2.cha);
-          return globals.stats['Charisma'] = bonus.toString();
+          charSession.cha = int.parse(str);
+          updateCharismaSkills(charSession, difference);
+          updateCharacter(charSession);
+          return bonus.toString();
         });
   }
 }

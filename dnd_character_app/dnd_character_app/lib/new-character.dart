@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dnd_character_app/widgets/characterModel.dart';
-import 'package:dnd_character_app/widgets/character-functions.dart';
-import 'package:dnd_character_app/widgets/CustomIcons.dart';
+import 'package:dnd_character_app/models/characterModel.dart';
+import 'package:dnd_character_app/services/character-functions.dart';
+import 'package:dnd_character_app/services/CustomIcons.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

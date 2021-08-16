@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'globals.dart' as globals;
-import 'package:dnd_character_app/widgets/character-functions.dart';
+import 'package:dnd_character_app/services/character-functions.dart';
+import 'package:dnd_character_app/models/characterModel.dart';
 
 class SkillsState extends State<Skills> {
   //Boring set up of all the controllers for each skill
@@ -68,80 +68,82 @@ class SkillsState extends State<Skills> {
     //Controllers are a lot of extra work, but are neccessary for this app to change on one screen. This makes it more convient for the users
     //Setting up the controllers with text to be inputted before the user loads and see's the screen. Otherwise the stats inputted earlier aren't visable to the user. Got to do this for every controller...
     //A list of controllers doesn't seem to work for this for some reason, maybe it's not getting the references?
+    //CharSession is the current character from the database
+    Pharacter CharSession = ModalRoute.of(context).settings.arguments;
     athleticsController = TextEditingController(
-        text: checkIfProficient(globals.temp2.athletics.toString(),
-            globals.temp2.profAthletics, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.athletics.toString(),
+            CharSession.profAthletics, CharSession.proficiencyBonus));
     savStrController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savStr.toString(),
-            globals.temp2.profSavStr, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.savStr.toString(),
+            CharSession.profSavStr, CharSession.proficiencyBonus));
     savDexController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savDex.toString(),
-            globals.temp2.profSavDex, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.savDex.toString(),
+            CharSession.profSavDex, CharSession.proficiencyBonus));
     acrobaticsController = TextEditingController(
-        text: checkIfProficient(globals.temp2.acrobatics.toString(),
-            globals.temp2.profAcrobatics, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.acrobatics.toString(),
+            CharSession.profAcrobatics, CharSession.proficiencyBonus));
     stealthController = TextEditingController(
-        text: checkIfProficient(globals.temp2.stealth.toString(),
-            globals.temp2.profStealth, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.stealth.toString(),
+            CharSession.profStealth, CharSession.proficiencyBonus));
     sleightController = TextEditingController(
-        text: checkIfProficient(globals.temp2.sleight.toString(),
-            globals.temp2.profSleight, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.sleight.toString(),
+            CharSession.profSleight, CharSession.proficiencyBonus));
     savConController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savCon.toString(),
-            globals.temp2.profSavCon, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.savCon.toString(),
+            CharSession.profSavCon, CharSession.proficiencyBonus));
     savIntController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savInt.toString(),
-            globals.temp2.profSaveInt, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.savInt.toString(),
+            CharSession.profSaveInt, CharSession.proficiencyBonus));
     arcanaController = TextEditingController(
-        text: checkIfProficient(globals.temp2.arcana.toString(),
-            globals.temp2.profArcana, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.arcana.toString(),
+            CharSession.profArcana, CharSession.proficiencyBonus));
     historyController = TextEditingController(
-        text: checkIfProficient(globals.temp2.history.toString(),
-            globals.temp2.profHistory, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.history.toString(),
+            CharSession.profHistory, CharSession.proficiencyBonus));
     investigationController = TextEditingController(
-        text: checkIfProficient(globals.temp2.investigation.toString(),
-            globals.temp2.profInvestigation, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.investigation.toString(),
+            CharSession.profInvestigation, CharSession.proficiencyBonus));
     natureController = TextEditingController(
-        text: checkIfProficient(globals.temp2.nature.toString(),
-            globals.temp2.profNature, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.nature.toString(),
+            CharSession.profNature, CharSession.proficiencyBonus));
     religionController = TextEditingController(
-        text: checkIfProficient(globals.temp2.religion.toString(),
-            globals.temp2.profReligion, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.religion.toString(),
+            CharSession.profReligion, CharSession.proficiencyBonus));
     savWisController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savWis.toString(),
-            globals.temp2.profSavWis, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.savWis.toString(),
+            CharSession.profSavWis, CharSession.proficiencyBonus));
     animalController = TextEditingController(
-        text: checkIfProficient(globals.temp2.animal.toString(),
-            globals.temp2.profAnimal, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.animal.toString(),
+            CharSession.profAnimal, CharSession.proficiencyBonus));
     insightController = TextEditingController(
-        text: checkIfProficient(globals.temp2.insight.toString(),
-            globals.temp2.profInsight, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.insight.toString(),
+            CharSession.profInsight, CharSession.proficiencyBonus));
     medicineController = TextEditingController(
-        text: checkIfProficient(globals.temp2.medicine.toString(),
-            globals.temp2.profMedicine, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.medicine.toString(),
+            CharSession.profMedicine, CharSession.proficiencyBonus));
     perceptionController = TextEditingController(
-        text: checkIfProficient(globals.temp2.perception.toString(),
-            globals.temp2.profPerception, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.perception.toString(),
+            CharSession.profPerception, CharSession.proficiencyBonus));
     survivalController = TextEditingController(
-        text: checkIfProficient(globals.temp2.survival.toString(),
-            globals.temp2.profSurvival, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.survival.toString(),
+            CharSession.profSurvival, CharSession.proficiencyBonus));
     savChaController = TextEditingController(
-        text: checkIfProficient(globals.temp2.savCha.toString(),
-            globals.temp2.profSavCha, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.savCha.toString(),
+            CharSession.profSavCha, CharSession.proficiencyBonus));
     deceptionController = TextEditingController(
-        text: checkIfProficient(globals.temp2.deception.toString(),
-            globals.temp2.profDeception, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.deception.toString(),
+            CharSession.profDeception, CharSession.proficiencyBonus));
     intimidationController = TextEditingController(
-        text: checkIfProficient(globals.temp2.intimidation.toString(),
-            globals.temp2.profIntimidation, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.intimidation.toString(),
+            CharSession.profIntimidation, CharSession.proficiencyBonus));
     performanceController = TextEditingController(
-        text: checkIfProficient(globals.temp2.performance.toString(),
-            globals.temp2.profPerformance, globals.temp2.proficiencyBonus));
+        text: checkIfProficient(CharSession.performance.toString(),
+            CharSession.profPerformance, CharSession.proficiencyBonus));
     persuasionController = TextEditingController(
         text: checkIfProficient(
-      globals.temp2.persuasion.toString(),
-      globals.temp2.profPersuasion,
-      globals.temp2.proficiencyBonus,
+      CharSession.persuasion.toString(),
+      CharSession.profPersuasion,
+      CharSession.proficiencyBonus,
     ));
     //Controllers must be offset or else each time the user clicks on the TextInputFields the text will go to the middle and make it inconvenient to type for the user.
     //Got to do this for every controller as well... Lists don't work
@@ -230,16 +232,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSavStr),
+                color: changeProfColor(CharSession.profSavStr),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSavStr == 0) {
-                        globals.temp2.profSavStr = 1;
-                        updateProfSavStr(globals.temp2, 1);
+                      if (CharSession.profSavStr == 0) {
+                        CharSession.profSavStr = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSavStr = 0;
-                        updateProfSavStr(globals.temp2, 0);
+                        CharSession.profSavStr = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -250,7 +252,7 @@ class SkillsState extends State<Skills> {
               width: 50,
               height: 20,
               child: TextFormField(
-                //initialValue: checkIfProficient(globals.temp2.savStr.toString(), globals.temp2.profSavStr, globals.temp2.proficiencyBonus),
+                //initialValue: checkIfProficient(CharSession.savStr.toString(), CharSession.profSavStr, CharSession.proficiencyBonus),
                 controller: savStrController,
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
@@ -263,16 +265,16 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if (globals.temp2.profSavStr == 1) {
+                    if (CharSession.profSavStr == 1) {
                       //Need to offset if we are proficient because the text controller will run through the checkProficiency function again after we change this variable.
                       //This allows use to offset the variable by the amount we'll add making if the desired outcome.
                       //This way the user doesn't get numbers added to the text they just inputted.
-                      globals.temp2.savStr = int.parse(newText) - globals.temp2.proficiencyBonus;
+                      CharSession.savStr = int.parse(newText) - CharSession.proficiencyBonus;
                     } else {
                       //If we don't do else statements the offset would affect us negatively if we aren't proficient
-                      globals.temp2.savStr = int.parse(newText);
+                      CharSession.savStr = int.parse(newText);
                     }
-                    updateSavStr(globals.temp2, globals.temp2.savStr);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -301,16 +303,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profAthletics),
+                color: changeProfColor(CharSession.profAthletics),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profAthletics == 0) {
-                        globals.temp2.profAthletics = 1;
-                        updateProfAthletics(globals.temp2, 1);
+                      if (CharSession.profAthletics == 0) {
+                        CharSession.profAthletics = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profAthletics = 0;
-                        updateProfAthletics(globals.temp2, 0);
+                        CharSession.profAthletics = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -321,7 +323,7 @@ class SkillsState extends State<Skills> {
               width: 50,
               height: 20,
               child: TextFormField(
-                //initialValue: checkIfProficient(globals.stats['Strength'], globals.temp2.profAthletics, globals.temp2.proficiencyBonus),
+                //initialValue: checkIfProficient(globals.stats['Strength'], CharSession.profAthletics, CharSession.proficiencyBonus),
                 controller: athleticsController,
                 enableInteractiveSelection: false,
                 keyboardType: TextInputType.numberWithOptions(signed: true),
@@ -334,13 +336,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profAthletics == 1){
-                      globals.temp2.athletics = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profAthletics == 1){
+                      CharSession.athletics = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.athletics = int.parse(newText);
+                      CharSession.athletics = int.parse(newText);
                     }
-                    updateAthletics(globals.temp2, globals.temp2.athletics);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -393,16 +395,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSavDex),
+                color: changeProfColor(CharSession.profSavDex),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSavDex == 0) {
-                        globals.temp2.profSavDex = 1;
-                        updateProfSavDex(globals.temp2, 1);
+                      if (CharSession.profSavDex == 0) {
+                        CharSession.profSavDex = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSavDex = 0;
-                        updateProfSavDex(globals.temp2, 0);
+                        CharSession.profSavDex = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -425,13 +427,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSavDex == 1){
-                      globals.temp2.savDex = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSavDex == 1){
+                      CharSession.savDex = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.savDex = int.parse(newText);
+                      CharSession.savDex = int.parse(newText);
                     }
-                    updateSavDex(globals.temp2, globals.temp2.savDex);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -460,16 +462,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profAcrobatics),
+                color: changeProfColor(CharSession.profAcrobatics),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profAcrobatics == 0) {
-                        globals.temp2.profAcrobatics = 1;
-                        updateProfAcrobatics(globals.temp2, 1);
+                      if (CharSession.profAcrobatics == 0) {
+                        CharSession.profAcrobatics = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profAcrobatics = 0;
-                        updateProfAcrobatics(globals.temp2, 0);
+                        CharSession.profAcrobatics = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -492,13 +494,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profAcrobatics == 1){
-                      globals.temp2.acrobatics = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profAcrobatics == 1){
+                      CharSession.acrobatics = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.acrobatics = int.parse(newText);
+                      CharSession.acrobatics = int.parse(newText);
                     }
-                    updateAcrobatics(globals.temp2, globals.temp2.acrobatics);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -527,16 +529,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profStealth),
+                color: changeProfColor(CharSession.profStealth),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profStealth == 0) {
-                        globals.temp2.profStealth = 1;
-                        updateProfStealth(globals.temp2, 1);
+                      if (CharSession.profStealth == 0) {
+                        CharSession.profStealth = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profStealth = 0;
-                        updateProfStealth(globals.temp2, 0);
+                        CharSession.profStealth = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -559,13 +561,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profStealth == 1){
-                      globals.temp2.stealth = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profStealth == 1){
+                      CharSession.stealth = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.stealth = int.parse(newText);
+                      CharSession.stealth = int.parse(newText);
                     }
-                    updateStealth(globals.temp2, globals.temp2.stealth);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -594,16 +596,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSleight),
+                color: changeProfColor(CharSession.profSleight),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSleight == 0) {
-                        globals.temp2.profSleight = 1;
-                        updateProfSleight(globals.temp2, 1);
+                      if (CharSession.profSleight == 0) {
+                        CharSession.profSleight = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSleight = 0;
-                        updateProfSleight(globals.temp2, 0);
+                        CharSession.profSleight = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -626,13 +628,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSleight == 1){
-                      globals.temp2.sleight = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSleight == 1){
+                      CharSession.sleight = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.sleight = int.parse(newText);
+                      CharSession.sleight = int.parse(newText);
                     }
-                    updateSleight(globals.temp2, globals.temp2.sleight);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -686,16 +688,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSavCon),
+                color: changeProfColor(CharSession.profSavCon),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSavCon == 0) {
-                        globals.temp2.profSavCon = 1;
-                        updateProfSavCon(globals.temp2, 1);
+                      if (CharSession.profSavCon == 0) {
+                        CharSession.profSavCon = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSavCon = 0;
-                        updateProfSavCon(globals.temp2, 0);
+                        CharSession.profSavCon = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -718,13 +720,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSavCon == 1){
-                      globals.temp2.savCon = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSavCon == 1){
+                      CharSession.savCon = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.savCon = int.parse(newText);
+                      CharSession.savCon = int.parse(newText);
                     }
-                    updateSavCon(globals.temp2, globals.temp2.savCon);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -777,16 +779,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSaveInt),
+                color: changeProfColor(CharSession.profSaveInt),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSaveInt == 0) {
-                        globals.temp2.profSaveInt = 1;
-                        updateProfSaveInt(globals.temp2, 1);
+                      if (CharSession.profSaveInt == 0) {
+                        CharSession.profSaveInt = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSaveInt = 0;
-                        updateProfSaveInt(globals.temp2, 0);
+                        CharSession.profSaveInt = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -809,13 +811,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSaveInt == 1){
-                      globals.temp2.savInt = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSaveInt == 1){
+                      CharSession.savInt = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.savInt = int.parse(newText);
+                      CharSession.savInt = int.parse(newText);
                     }
-                    updateSavInt(globals.temp2, globals.temp2.savInt);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -844,16 +846,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profArcana),
+                color: changeProfColor(CharSession.profArcana),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profArcana == 0) {
-                        globals.temp2.profArcana = 1;
-                        updateProfArcana(globals.temp2, 1);
+                      if (CharSession.profArcana == 0) {
+                        CharSession.profArcana = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profArcana = 0;
-                        updateProfArcana(globals.temp2, 0);
+                        CharSession.profArcana = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -876,13 +878,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profArcana == 1){
-                      globals.temp2.arcana = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profArcana == 1){
+                      CharSession.arcana = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.arcana = int.parse(newText);
+                      CharSession.arcana = int.parse(newText);
                     }
-                    updateArcana(globals.temp2, globals.temp2.arcana);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -911,16 +913,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profHistory),
+                color: changeProfColor(CharSession.profHistory),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profHistory == 0) {
-                        globals.temp2.profHistory = 1;
-                        updateProfHistory(globals.temp2, 1);
+                      if (CharSession.profHistory == 0) {
+                        CharSession.profHistory = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profHistory = 0;
-                        updateProfHistory(globals.temp2, 0);
+                        CharSession.profHistory = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -943,13 +945,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profHistory == 1){
-                      globals.temp2.history = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profHistory == 1){
+                      CharSession.history = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.history = int.parse(newText);
+                      CharSession.history = int.parse(newText);
                     }
-                    updateHistory(globals.temp2, globals.temp2.history);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -978,16 +980,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profInvestigation),
+                color: changeProfColor(CharSession.profInvestigation),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profInvestigation == 0) {
-                        globals.temp2.profInvestigation = 1;
-                        updateProfInvestigation(globals.temp2, 1);
+                      if (CharSession.profInvestigation == 0) {
+                        CharSession.profInvestigation = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profInvestigation = 0;
-                        updateProfInvestigation(globals.temp2, 0);
+                        CharSession.profInvestigation = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1010,14 +1012,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profInvestigation == 1){
-                      globals.temp2.investigation = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profInvestigation == 1){
+                      CharSession.investigation = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.investigation = int.parse(newText);
+                      CharSession.investigation = int.parse(newText);
                     }
-                    updateInvestigation(
-                        globals.temp2, globals.temp2.investigation);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1046,16 +1047,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profNature),
+                color: changeProfColor(CharSession.profNature),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profNature == 0) {
-                        globals.temp2.profNature = 1;
-                        updateProfNature(globals.temp2, 1);
+                      if (CharSession.profNature == 0) {
+                        CharSession.profNature = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profNature = 0;
-                        updateProfNature(globals.temp2, 0);
+                        CharSession.profNature = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1078,13 +1079,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profNature == 1){
-                      globals.temp2.nature = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profNature == 1){
+                      CharSession.nature = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.nature = int.parse(newText);
+                      CharSession.nature = int.parse(newText);
                     }
-                    updateNature(globals.temp2, globals.temp2.nature);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1113,16 +1114,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profReligion),
+                color: changeProfColor(CharSession.profReligion),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profReligion == 0) {
-                        globals.temp2.profReligion = 1;
-                        updateProfReligion(globals.temp2, 1);
+                      if (CharSession.profReligion == 0) {
+                        CharSession.profReligion = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profReligion = 0;
-                        updateProfReligion(globals.temp2, 0);
+                        CharSession.profReligion = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1145,13 +1146,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profReligion == 1){
-                      globals.temp2.religion = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profReligion == 1){
+                      CharSession.religion = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.religion = int.parse(newText);
+                      CharSession.religion = int.parse(newText);
                     }
-                    updateReligion(globals.temp2, globals.temp2.religion);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1204,16 +1205,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSavWis),
+                color: changeProfColor(CharSession.profSavWis),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSavWis == 0) {
-                        globals.temp2.profSavWis = 1;
-                        updateProfSavWis(globals.temp2, 1);
+                      if (CharSession.profSavWis == 0) {
+                        CharSession.profSavWis = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSavWis = 0;
-                        updateProfSavWis(globals.temp2, 0);
+                        CharSession.profSavWis = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1236,13 +1237,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSavWis == 1){
-                      globals.temp2.savWis = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSavWis == 1){
+                      CharSession.savWis = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.savWis = int.parse(newText);
+                      CharSession.savWis = int.parse(newText);
                     }
-                    updateSavWis(globals.temp2, globals.temp2.savWis);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1271,16 +1272,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profAnimal),
+                color: changeProfColor(CharSession.profAnimal),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profAnimal == 0) {
-                        globals.temp2.profAnimal = 1;
-                        updateProfAnimal(globals.temp2, 1);
+                      if (CharSession.profAnimal == 0) {
+                        CharSession.profAnimal = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profAnimal = 0;
-                        updateProfAnimal(globals.temp2, 0);
+                        CharSession.profAnimal = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1303,13 +1304,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profAnimal == 1){
-                      globals.temp2.animal = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profAnimal == 1){
+                      CharSession.animal = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.animal = int.parse(newText);
+                      CharSession.animal = int.parse(newText);
                     }
-                    updateAnimal(globals.temp2, globals.temp2.animal);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1338,16 +1339,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profInsight),
+                color: changeProfColor(CharSession.profInsight),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profInsight == 0) {
-                        globals.temp2.profInsight = 1;
-                        updateProfInsight(globals.temp2, 1);
+                      if (CharSession.profInsight == 0) {
+                        CharSession.profInsight = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profInsight = 0;
-                        updateProfInsight(globals.temp2, 0);
+                        CharSession.profInsight = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1370,13 +1371,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profInsight == 1){
-                      globals.temp2.insight = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profInsight == 1){
+                      CharSession.insight = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.insight = int.parse(newText);
+                      CharSession.insight = int.parse(newText);
                     }
-                    updateInsight(globals.temp2, globals.temp2.insight);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1405,16 +1406,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profMedicine),
+                color: changeProfColor(CharSession.profMedicine),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profMedicine == 0) {
-                        globals.temp2.profMedicine = 1;
-                        updateProfMedicine(globals.temp2, 1);
+                      if (CharSession.profMedicine == 0) {
+                        CharSession.profMedicine = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profMedicine = 0;
-                        updateProfMedicine(globals.temp2, 0);
+                        CharSession.profMedicine = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1437,13 +1438,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profMedicine == 1){
-                      globals.temp2.medicine = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profMedicine == 1){
+                      CharSession.medicine = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.medicine = int.parse(newText);
+                      CharSession.medicine = int.parse(newText);
                     }
-                    updateMedicine(globals.temp2, globals.temp2.medicine);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1472,16 +1473,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profPerception),
+                color: changeProfColor(CharSession.profPerception),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profPerception == 0) {
-                        globals.temp2.profPerception = 1;
-                        updateProfPerception(globals.temp2, 1);
+                      if (CharSession.profPerception == 0) {
+                        CharSession.profPerception = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profPerception = 0;
-                        updateProfPerception(globals.temp2, 0);
+                        CharSession.profPerception = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1504,13 +1505,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profPerception == 1){
-                      globals.temp2.perception = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profPerception == 1){
+                      CharSession.perception = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.perception = int.parse(newText);
+                      CharSession.perception = int.parse(newText);
                     }
-                    updatePerception(globals.temp2, globals.temp2.perception);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1539,16 +1540,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSurvival),
+                color: changeProfColor(CharSession.profSurvival),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSurvival == 0) {
-                        globals.temp2.profSurvival = 1;
-                        updateProfSurvival(globals.temp2, 1);
+                      if (CharSession.profSurvival == 0) {
+                        CharSession.profSurvival = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSurvival = 0;
-                        updateProfSurvival(globals.temp2, 0);
+                        CharSession.profSurvival = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1571,13 +1572,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSurvival == 1){
-                      globals.temp2.survival = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSurvival == 1){
+                      CharSession.survival = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.survival = int.parse(newText);
+                      CharSession.survival = int.parse(newText);
                     }
-                    updateSurvival(globals.temp2, globals.temp2.survival);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1630,16 +1631,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profSavCha),
+                color: changeProfColor(CharSession.profSavCha),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profSavCha == 0) {
-                        globals.temp2.profSavCha = 1;
-                        updateProfSavCha(globals.temp2, 1);
+                      if (CharSession.profSavCha == 0) {
+                        CharSession.profSavCha = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profSavCha = 0;
-                        updateProfSavCha(globals.temp2, 0);
+                        CharSession.profSavCha = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1662,13 +1663,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profSavCha == 1){
-                      globals.temp2.savCha = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profSavCha == 1){
+                      CharSession.savCha = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.savCha = int.parse(newText);
+                      CharSession.savCha = int.parse(newText);
                     }
-                    updateSavCha(globals.temp2, globals.temp2.savCha);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1697,16 +1698,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profDeception),
+                color: changeProfColor(CharSession.profDeception),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profDeception == 0) {
-                        globals.temp2.profDeception = 1;
-                        updateProfDeception(globals.temp2, 1);
+                      if (CharSession.profDeception == 0) {
+                        CharSession.profDeception = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profDeception = 0;
-                        updateProfDeception(globals.temp2, 0);
+                        CharSession.profDeception = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1729,13 +1730,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profDeception == 1){
-                      globals.temp2.deception= int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profDeception == 1){
+                      CharSession.deception= int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.deception = int.parse(newText);
+                      CharSession.deception = int.parse(newText);
                     }
-                    updateDeception(globals.temp2, globals.temp2.deception);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1764,16 +1765,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profIntimidation),
+                color: changeProfColor(CharSession.profIntimidation),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profIntimidation == 0) {
-                        globals.temp2.profIntimidation = 1;
-                        updateProfIntimidation(globals.temp2, 1);
+                      if (CharSession.profIntimidation == 0) {
+                        CharSession.profIntimidation = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profIntimidation = 0;
-                        updateProfIntimidation(globals.temp2, 0);
+                        CharSession.profIntimidation = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1796,14 +1797,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profIntimidation == 1){
-                      globals.temp2.intimidation = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profIntimidation == 1){
+                      CharSession.intimidation = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.intimidation = int.parse(newText);
+                      CharSession.intimidation = int.parse(newText);
                     }
-                    updateIntimidation(
-                        globals.temp2, globals.temp2.intimidation);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1832,16 +1832,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profPerformance),
+                color: changeProfColor(CharSession.profPerformance),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profPerformance == 0) {
-                        globals.temp2.profPerformance = 1;
-                        updateProfPerformance(globals.temp2, 1);
+                      if (CharSession.profPerformance == 0) {
+                        CharSession.profPerformance = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profPerformance = 0;
-                        updateProfPerformance(globals.temp2, 0);
+                        CharSession.profPerformance = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1864,13 +1864,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profPerformance == 1){
-                      globals.temp2.performance = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profPerformance == 1){
+                      CharSession.performance = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.performance = int.parse(newText);
+                      CharSession.performance = int.parse(newText);
                     }
-                    updatePerformance(globals.temp2, globals.temp2.performance);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
@@ -1899,16 +1899,16 @@ class SkillsState extends State<Skills> {
               height: 25,
               child: Material(
                 type: MaterialType.circle,
-                color: changeProfColor(globals.temp2.profPersuasion),
+                color: changeProfColor(CharSession.profPersuasion),
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      if (globals.temp2.profPersuasion == 0) {
-                        globals.temp2.profPersuasion = 1;
-                        updateProfPersuasion(globals.temp2, 1);
+                      if (CharSession.profPersuasion == 0) {
+                        CharSession.profPersuasion = 1;
+                        updateCharacter(CharSession);
                       } else {
-                        globals.temp2.profPersuasion = 0;
-                        updateProfPersuasion(globals.temp2, 0);
+                        CharSession.profPersuasion = 0;
+                        updateCharacter(CharSession);
                       }
                     });
                   },
@@ -1931,13 +1931,13 @@ class SkillsState extends State<Skills> {
                     hintText: "0", hintStyle: TextStyle(color: Colors.white)),
                 onFieldSubmitted: (newText) => {
                   setState(() {
-                    if(globals.temp2.profPersuasion == 1){
-                      globals.temp2.persuasion = int.parse(newText) - globals.temp2.proficiencyBonus;
+                    if(CharSession.profPersuasion == 1){
+                      CharSession.persuasion = int.parse(newText) - CharSession.proficiencyBonus;
                     }
                     else{
-                      globals.temp2.persuasion = int.parse(newText);
+                      CharSession.persuasion = int.parse(newText);
                     }
-                    updatePersuasion(globals.temp2, globals.temp2.persuasion);
+                    updateCharacter(CharSession);
                   }),
                 },
               ),
